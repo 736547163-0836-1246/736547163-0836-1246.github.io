@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="gostar.png" type="imagem/png">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<body>
+<div id="text"></div>
+
+<form id="id" >
+  <p id="mt"> - Muitão</p>
+</form>
+
+</body>
+
+<script>
+var el = document.querySelector("#text");
+var text = "Te amo <3 Te amo <3 Te amo <3 Te amo <3 Te amo <3 Te amo <3"
+var interval = 100;
+function showtext(el, text, interval) {
+  var char = text.split("").reverse();
+  
+  var typer = setInterval(function() {
+  
+    if (!char.length) {
+        return clearInterval(typer)
+    }
+    
+    var next = char.pop();
+    
+    el.innerHTML += next;
+    
+  }, interval);
+  
+}
+showtext(el, text, interval);
+</script>
+
+<script>
+  $('#mt').hide();
+  
+  setTimeout(function(){ 
+      $('#mt').show();
+  }, 4000);
+</script>
+
+<style>
+
+*{
+   margin: 5%;
+   padding: 0%;
+   background-color: rgb(236, 86, 118);
+}
+#text{
+    display: flex;
+    justify-content: center;
+    color: rgb(158, 11, 11);
+    font-size:30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#mt{
+    display: flex;
+    justify-content: center;
+    color: rgb(158, 11, 11);
+    font-size:15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+</style>
